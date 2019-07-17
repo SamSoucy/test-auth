@@ -62,7 +62,7 @@ const updateUI = async () => {
   
 const login = async () => {
     await auth0.loginWithRedirect({
-      redirect_uri: window.location.origin
+      redirect_uri: "https://elated-hawking-39e9a0.netlify.com/about"
     });
 };
 const logout = () => {
