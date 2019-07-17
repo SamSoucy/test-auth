@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@auth0/auth0-spa-js": "^1.1.0",
+    "express": "^4.17.1"
+  },
+  "name": "test-auth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": "https://github.com/SamSoucy/test-auth.git",
+  "author": "Samsoucy <newf930@outlook.com>",
+  "license": "MIT"
+}
