@@ -1,9 +1,7 @@
 {
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.1.0",
-    "express": "^4.17.1",
-    "i": "^0.3.6",
-    "vue-stripe-elements-plus": "^0.2.10"
+    "express": "^4.17.1"
   },
   "name": "test-auth",
   "version": "1.0.0",
@@ -14,5 +12,8 @@
   },
   "repository": "https://github.com/SamSoucy/test-auth.git",
   "author": "Samsoucy <newf930@outlook.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
 }
