@@ -5,7 +5,7 @@ require_once('vendor/autoload.php');
 
 // Be sure to replace this with your actual test API key
 // (switch to the live key later)
-\Stripe\Stripe::setApiKey("sk_test_hVFPjzKb3yhtlVJgIYazNBlw00JQ3F9Qaw");
+\Stripe\Stripe::setApiKey("pk_test_W6vtswQDS4pn6Ik2Ckj3bgWV00rIABQGNP");
 
 try
 {
