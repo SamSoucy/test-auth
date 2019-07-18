@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.1.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "i": "^0.3.6",
+    "vue-stripe-elements-plus": "^0.2.10"
   },
   "name": "test-auth",
   "version": "1.0.0",
