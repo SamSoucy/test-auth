@@ -27,6 +27,35 @@
     </label>
   </div>
 
+  <div id="editProfileContainer"></div>
+
+<script src="build/auth0-editprofile-widget.min.js"></script>
+
+<script type="text/javascript">
+
+var editProfileWidget = new Auth0EditProfileWidget('editProfileContainer', "simplisocial.auth0.com", [
+    { label: "Name", type:"text", attribute:"name",
+      validation: function(name){
+          return (name.length > 10 ? 'The name is too long' : null);
+      }
+    },
+
+    { label: "Lastname", type:"text", attribute:"lastname" },
+
+    { label: "BirthDay", type:"date", attribute:"birthday" },
+
+    { label: "Type", type:"select", attribute:"account_type",
+      options:[
+        { value: "type_1", text:"Type 1"},
+        { value: "type_2", text:"Type 2"},
+        { value: "type_3", text:"Type 3"}
+      ]
+    }
+]);
+
+editProfileWidget.init(user_token);
+
+</script>
     <script src="https://cdn.auth0.com/js/auth0-spa-js/1.1.0/auth0-spa-js.production.js"></script>
     <script src="js/app.js"></script>
   </body>
