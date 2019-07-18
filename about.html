@@ -9,6 +9,17 @@
   <body>
     <button id="btn-login" disabled="true" onclick="login()">Log in</button>
     <button id="btn-logout" disabled="true" onclick="logout()">Log out</button>
+    <form action="/create_subscription.php" method="POST">
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_W6vtswQDS4pn6Ik2Ckj3bgWV00rIABQGNP"
+        data-image="/images/marketplace.png" 
+        data-name="Emma's Farm CSA"
+        data-description="Subscription for 1 weekly box"
+        data-amount="2000"
+        data-label="Sign Me Up!">
+      </script>
+    </form>
 
     <div class="hidden" id="gated-content">
     <p>
