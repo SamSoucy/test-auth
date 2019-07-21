@@ -1,6 +1,6 @@
 let auth0 = null;
 
-const fetchAuthConfig = () => fetch("/auth_config.json");
+const fetchAuthConfig = () => fetch("auth_config.json");
 
 const configureClient = async () => {
     const response = await fetchAuthConfig();
@@ -62,7 +62,7 @@ const updateUI = async () => {
   
 const login = async () => {
     await auth0.loginWithRedirect({
-      redirect_uri: "https://elated-hawking-39e9a0.netlify.com/about"
+      redirect_uri: "http://localhost:3000/stripeRecurringPayments/index"
     });
 };
 const logout = () => {
