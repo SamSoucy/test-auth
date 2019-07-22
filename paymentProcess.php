@@ -1,4 +1,4 @@
-<?php
+<?php header( 'Location: /index.html' ) ;
     require_once('stripe-php-6.40.0/init.php');
 
     $stripe = [
