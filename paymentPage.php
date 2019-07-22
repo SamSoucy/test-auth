@@ -7,10 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/paymentPage.css" />
-    <link rel="prefetch" type="text/php" href="paymentProcess.php"
+    <link rel="prefetch" type="text/php" href="paymentProcess.php">
 </head>
 
   <body>
+  <?php header( 'Location: /index.html' ) ;  ?>
   
       <div class="container-right">
       <button id="btn-login" disabled="true" onclick="login()">Log in</button>
