@@ -8,7 +8,7 @@
     );
 
     if (!isset($_GET['pid']) || !in_array($_GET['pid'], $products['pids']) || !isset($_POST['stripeToken']) || !isset($_POST['stripeEmail'])) {
-      header('Location: index.php');
+      header('Location: paymentPage.html');
       exit();
     }
     require_once('stripe-php-6.40.0/init.php');
