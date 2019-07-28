@@ -36,66 +36,40 @@
                         >
                         Checkout
                     </button>
+                    <div id="error-message"></div>
+
+                    <script>
+                        var stripe = Stripe('pk_test_W6vtswQDS4pn6Ik2Ckj3bgWV00rIABQGNP');
+
+                        var checkoutButton = document.getElementById('checkout-button-plan_FSXb5AqUDA37Bu');
+                        checkoutButton.addEventListener('click', function () {
+                            // When the customer clicks on the button, redirect
+                            // them to Checkout.
+                            stripe.redirectToCheckout({
+                            items: [{plan: 'plan_FSXb5AqUDA37Bu', quantity: 1}],
+
+                            // Do not rely on the redirect to the successUrl for fulfilling
+                            // purchases, customers may not always reach the success_url after
+                            // a successful payment.
+                            // Instead use one of the strategies described in
+                            // https://stripe.com/docs/payments/checkout/fulfillment
+                            successUrl: 'https://elated-hawking-39e9a0.netlify.com/membersOnlyContent',
+                            cancelUrl: 'https://your-website.com/canceled',
+                            })
+                            .then(function (result) {
+                            if (result.error) {
+                                // If `redirectToCheckout` fails due to a browser or network
+                                // error, display the localized error message to your customer.
+                                var displayError = document.getElementById('error-message');
+                                displayError.textContent = result.error.message;
+                            }
+                            });
+                        });
+                    </script>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header text-center">
-                        <h2 class="price"><span class="currency">$</span>67</h2>
-                    </div>
-                    <div class="card-body">
-                        <h1 class="text-center">Product 1</h1>
-                        <ul class="list-group">
-                            <li class="list-group-item">Feature 1</li>
-                            <li class="list-group-item">Feature 2</li>
-                            <li class="list-group-item">Feature 3</li>
-                        </ul>
-                    </div>
-                    <div class="card-footer">
-                        <form action="paymentProcess.php?pid=2" method="POST">
-                            <script
-                                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                    data-key="pk_test_InwOqy624uXwfN2dgqlCR2gI"
-                                    data-amount="6700"
-                                    data-name="CodingPassiveIncome"
-                                    data-description="Widget"
-                                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                                    data-locale="auto"
-                                    data-currency="eur">
-                            </script>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header text-center">
-                        <h2 class="price"><span class="currency">$</span>97</h2>
-                    </div>
-                    <div class="card-body">
-                        <h1 class="text-center">Product 1</h1>
-                        <ul class="list-group">
-                            <li class="list-group-item">Feature 1</li>
-                            <li class="list-group-item">Feature 2</li>
-                            <li class="list-group-item">Feature 3</li>
-                        </ul>
-                    </div>
-                    <div class="card-footer">
-                        <form action="paymentProcess.php?pid=3" method="POST">
-                            <script
-                                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                    data-key="pk_test_InwOqy624uXwfN2dgqlCR2gI"
-                                    data-amount="9700"
-                                    data-name="CodingPassiveIncome"
-                                    data-description="Widget"
-                                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                                    data-locale="auto"
-                                    data-currency="eur">
-                            </script>
-                        </form>
-                    </div>
-                </div>
-            </div>
+           
+          
         </div>
     </div>
     <script src="https://cdn.auth0.com/js/auth0-spa-js/1.1.0/auth0-spa-js.production.js"></script>
