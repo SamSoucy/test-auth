@@ -3,7 +3,7 @@
     "@auth0/auth0-spa-js": "^1.1.0",
     "auth0": "^2.18.0",
     "auth0-editprofile-widget": "^1.0.0",
-    "auth0-lock": "^11.17.0",
+    "auth0-lock": "^11.21.0",
     "composer": "^4.1.0",
     "express": "^4.17.1",
     "php": "^0.0.1",
